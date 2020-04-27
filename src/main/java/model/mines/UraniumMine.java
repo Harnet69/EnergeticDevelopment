@@ -8,7 +8,7 @@ public class UraniumMine extends Mine {
     }
 
     @Override
-    int produceRes() {
-        return 0;
+    public int produceRes() {
+        return super.getResPerDay();
     }
 }

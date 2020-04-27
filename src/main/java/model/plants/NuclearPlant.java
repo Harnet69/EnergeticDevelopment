@@ -1,7 +1,7 @@
 package model.plants;
 
 public class NuclearPlant extends EnergyPlant{
-    public NuclearPlant(int energyPerDay, int consumeResPerDay) {
+    public NuclearPlant() {
         super.setConsumeResPerDay(1);
         super.setEnergyPerDay(10_000);
         super.setName("Nuclear plant");

@@ -18,12 +18,12 @@ public abstract class EnergyPlant {
         return energyPerDay;
     }
 
-    public int getConsumeResPerDay() {
-        return consumeResPerDay;
-    }
-
     public void setEnergyPerDay(int energyPerDay) {
         this.energyPerDay = energyPerDay;
+    }
+
+    public int getConsumeResPerDay() {
+        return consumeResPerDay;
     }
 
     public void setConsumeResPerDay(int consumeResPerDay) {

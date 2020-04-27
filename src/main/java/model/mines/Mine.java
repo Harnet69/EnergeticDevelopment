@@ -21,5 +21,5 @@ public abstract class Mine {
     }
 
 
-    abstract int produceRes();
+    public abstract int produceRes();
 }
