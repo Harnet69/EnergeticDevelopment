@@ -5,8 +5,7 @@ import model.mines.CoalMine;
 import model.mines.Mine;
 import model.mines.MoonMine;
 import model.mines.UraniumMine;
-import model.plants.EnergyPlant;
-import model.plants.SolarPlant;
+import model.plants.*;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -56,19 +55,19 @@ public class Store {
         return helium3;
     }
 
-    public void addMines(int coals, int uranium, int moon) {
-        int[] plants = new int[]{coals, uranium, moon};
-        for (int q = 0; q < plants.length; q++) {
+    public void addMine(int coals, int uranium, int moon) {
+        int[] plantsQtt = new int[]{coals, uranium, moon};
+        for (int q = 0; q < plantsQtt.length; q++) {
             if (q == 0) {
-                for (int i = 1; i <= plants[q]; i++) {
+                for (int i = 1; i <= plantsQtt[q]; i++) {
                     mines.add(new CoalMine());
                 }
             } else if (q == 1) {
-                for (int i = 1; i <= plants[q]; i++) {
+                for (int i = 1; i <= plantsQtt[q]; i++) {
                     mines.add(new UraniumMine());
                 }
             } else {
-                for (int i = 1; i <= plants[q]; i++) {
+                for (int i = 1; i <= plantsQtt[q]; i++) {
                     mines.add(new MoonMine());
                 }
             }
@@ -89,5 +88,33 @@ public class Store {
                     break;
             }
         }
+    }
+
+    public void addPlant(int coals, int solar, int nuclear, int fusion) {
+        int[] plantsQtt = new int[]{coals, solar, nuclear,fusion};
+        for (int q = 0; q < plantsQtt.length; q++) {
+            if (q == 0) {
+                for (int i = 1; i <= plantsQtt[q]; i++) {
+                    plants.add(new CoalPlant());
+                }
+            } else if (q == 1) {
+                for (int i = 1; i <= plantsQtt[q]; i++) {
+                    plants.add(new SolarPlant());
+                }
+            } else if(q == 2){
+                for (int i = 1; i <= plantsQtt[q]; i++) {
+                    plants.add(new NuclearPlant());
+                }
+            }
+            else{
+                for (int i = 1; i <= plantsQtt[q]; i++) {
+                    plants.add(new FusionPlant());
+                }
+            }
+        }
+    }
+
+    public void produceEnergy(){
+
     }
 }
