@@ -21,6 +21,8 @@ public class Store {
     private int uranium;
     private int helium3;
 
+    private int energy;
+
     private Store() {
     }
 
@@ -53,6 +55,10 @@ public class Store {
 
     public int getHelium3() {
         return helium3;
+    }
+
+    public int getEnergy() {
+        return energy;
     }
 
     public void addMine(int coals, int uranium, int moon) {
@@ -115,6 +121,24 @@ public class Store {
     }
 
     public void produceEnergy(){
-
+        for (EnergyPlant plant : plants) {
+            switch (plant.getName()) {
+                case "Coal plant":
+                    coal -= plant.getConsumeResPerDay();
+                    energy += plant.getEnergyPerDay();
+                    break;
+                case "Solar plant":
+                    energy += plant.getEnergyPerDay();
+                    break;
+                case "Nuclear plant":
+                    uranium -= plant.getConsumeResPerDay();
+                    energy += plant.getEnergyPerDay();
+                    break;
+                case "Fusion plant":
+                    helium3 -= plant.getConsumeResPerDay();
+                    energy += plant.getEnergyPerDay();
+                    break;
+            }
+        }
     }
 }
