@@ -2,13 +2,13 @@ package model.consumers;
 
 public class World extends Consumer {
 
-    public World(int consumeEnergyPerDay) {
-        super(consumeEnergyPerDay);
+    public World() {
+        super.setConsumeEnergyPerDay(6_000_000);
         super.setName("World");
     }
 
     @Override
     int consumeEnergy() {
-        return 0;
+        return getConsumeEnergyPerDay();
     }
 }

@@ -5,10 +5,6 @@ public abstract class EnergyPlant {
     private int energyPerDay;
     private int consumeResPerDay;
 
-    public EnergyPlant(int energyPerDay, int consumeResPerDay) {
-        this.energyPerDay = energyPerDay;
-        this.consumeResPerDay = consumeResPerDay;
-    }
 
     public String getName() {
         return name;
@@ -24,6 +20,14 @@ public abstract class EnergyPlant {
 
     public int getConsumeResPerDay() {
         return consumeResPerDay;
+    }
+
+    public void setEnergyPerDay(int energyPerDay) {
+        this.energyPerDay = energyPerDay;
+    }
+
+    public void setConsumeResPerDay(int consumeResPerDay) {
+        this.consumeResPerDay = consumeResPerDay;
     }
 
     abstract int consumeRes();

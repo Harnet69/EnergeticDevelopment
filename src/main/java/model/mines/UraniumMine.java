@@ -2,8 +2,8 @@ package model.mines;
 
 public class UraniumMine extends Mine {
 
-    public UraniumMine(int resPerDay) {
-        super(resPerDay);
+    public UraniumMine() {
+        super.setResPerDay(100);
         super.setName("Uranium mine");
     }
 

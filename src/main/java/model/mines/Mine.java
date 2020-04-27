@@ -4,10 +4,6 @@ public abstract class Mine {
     private String name;
     private int resPerDay;
 
-    public Mine(int resPerDay) {
-        this.resPerDay = resPerDay;
-    }
-
     public String getName() {
         return name;
     }

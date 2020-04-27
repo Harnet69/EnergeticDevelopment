@@ -2,7 +2,7 @@ package model.plants;
 
 public class SolarPlant extends EnergyPlant {
     public SolarPlant(int energyPerDay, int consumeResPerDay) {
-        super(energyPerDay, consumeResPerDay);
+        super.setEnergyPerDay(2);
         super.setName("Solar plant");
     }
 

@@ -1,13 +1,13 @@
 package model.consumers;
 
 public class Poland extends Consumer {
-    public Poland(int consumeEnergyPerDay) {
-        super(consumeEnergyPerDay);
+    public Poland() {
+        super.setConsumeEnergyPerDay(40_000);
         super.setName("Poland");
     }
 
     @Override
     int consumeEnergy() {
-        return 0;
+        return getConsumeEnergyPerDay();
     }
 }
