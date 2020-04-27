@@ -1,13 +1,15 @@
 package model;
 
 import model.consumers.Consumer;
+import model.consumers.NewYork;
+import model.consumers.Poland;
+import model.consumers.World;
 import model.mines.CoalMine;
 import model.mines.Mine;
 import model.mines.MoonMine;
 import model.mines.UraniumMine;
 import model.plants.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class Store {
     private static Store instance = null;
     private List<Mine> mines = new ArrayList<>();
     private List<EnergyPlant> plants = new ArrayList<>();
-    private List<Consumer> customers = new ArrayList<>();
+    private List<Consumer> consumers = new ArrayList<>();
 
     private int coal;
     private int uranium;
@@ -41,8 +43,8 @@ public class Store {
         return plants;
     }
 
-    public List<Consumer> getCustomers() {
-        return customers;
+    public List<Consumer> getConsumers() {
+        return consumers;
     }
 
     public int getCoal() {
@@ -61,7 +63,7 @@ public class Store {
         return energy;
     }
 
-    public void addMine(int coals, int uranium, int moon) {
+    public void addMines(int coals, int uranium, int moon) {
         int[] plantsQtt = new int[]{coals, uranium, moon};
         for (int q = 0; q < plantsQtt.length; q++) {
             if (q == 0) {
@@ -96,7 +98,7 @@ public class Store {
         }
     }
 
-    public void addPlant(int coals, int solar, int nuclear, int fusion) {
+    public void addPlants(int coals, int solar, int nuclear, int fusion) {
         int[] plantsQtt = new int[]{coals, solar, nuclear,fusion};
         for (int q = 0; q < plantsQtt.length; q++) {
             if (q == 0) {
@@ -139,6 +141,18 @@ public class Store {
                     energy += plant.getEnergyPerDay();
                     break;
             }
+        }
+    }
+
+    public void addConsumers(Consumer consumer) {
+        consumers.add(consumer);
+//        consumers.add(model.consumers.Poland.getInstance());
+//        consumers.add(model.consumers.World.getInstance());
+    }
+
+    public void consumeEnergy(){
+        for(Consumer consumer : consumers){
+            energy -= consumer.getConsumeEnergyPerDay();
         }
     }
 }

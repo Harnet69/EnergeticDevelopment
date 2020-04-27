@@ -1,18 +1,19 @@
 package controller;
 
 import model.Store;
-import model.mines.Mine;
-import model.plants.EnergyPlant;
+import model.consumers.NewYork;
 
 public class App {
     public static void main(String[] args) {
-        Store.getInstance().addMine(3, 1, 1);
-        Store.getInstance().addPlant(1,1, 3, 3);
+        Store.getInstance().addMines(3, 1, 0);
+        Store.getInstance().addPlants(1,1, 1, 0);
+        Store.getInstance().addConsumers(NewYork.getInstance());
 
         // produce resources
         for (int i = 1; i <= 3; i++) {
             Store.getInstance().produceResources();
             Store.getInstance().produceEnergy();
+            Store.getInstance().consumeEnergy();
 
         System.out.println("Coal: " + Store.getInstance().getCoal());
         System.out.println("Uranium: " + Store.getInstance().getUranium());
