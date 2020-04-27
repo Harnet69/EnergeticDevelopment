@@ -1,4 +1,4 @@
-package model.Mines;
+package model.mines;
 
 public class MoonMine extends Mine {
 }

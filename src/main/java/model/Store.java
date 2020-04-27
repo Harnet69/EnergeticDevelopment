@@ -1,4 +1,4 @@
-package model.plants;
+package model;
 
 public class Store {
     public Store instance = null;
