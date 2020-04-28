@@ -14,6 +14,7 @@ public class CoalPlant extends EnergyPlant {
 
     @Override
     int produceEnergy() {
+
         return 0;
     }
 }

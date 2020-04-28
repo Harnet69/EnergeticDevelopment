@@ -1,9 +1,6 @@
 package model;
 
 import model.consumers.Consumer;
-import model.consumers.NewYork;
-import model.consumers.Poland;
-import model.consumers.World;
 import model.mines.CoalMine;
 import model.mines.Mine;
 import model.mines.MoonMine;
@@ -146,8 +143,6 @@ public class Store {
 
     public void addConsumers(Consumer consumer) {
         consumers.add(consumer);
-//        consumers.add(model.consumers.Poland.getInstance());
-//        consumers.add(model.consumers.World.getInstance());
     }
 
     public void consumeEnergy(){

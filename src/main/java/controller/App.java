@@ -2,12 +2,16 @@ package controller;
 
 import model.Store;
 import model.consumers.NewYork;
+import model.consumers.Poland;
+import model.consumers.World;
 
 public class App {
     public static void main(String[] args) {
-        Store.getInstance().addMines(3, 1, 0);
-        Store.getInstance().addPlants(1,1, 1, 0);
-        Store.getInstance().addConsumers(NewYork.getInstance());
+        Store.getInstance().addMines(5, 1, 0);
+        Store.getInstance().addPlants(2,5, 4, 0);
+//        Store.getInstance().addConsumers(NewYork.getInstance());
+        Store.getInstance().addConsumers(Poland.getInstance());
+//        Store.getInstance().addConsumers(World.getInstance());
 
         // produce resources
         for (int i = 1; i <= 3; i++) {
